@@ -1,0 +1,36 @@
+body{
+	background-image: url(index-backg.jpg);
+    background-size: cover;
+
+
+
+}
+
+#diaa{
+
+    position:absolute;
+    transition: 5s ease;
+    top: 70%;
+    left: 45%;
+    width: 10%
+
+}
+#diaa:hover{
+
+transform: scale(1.1);
+
+}
+.head{
+
+ position: absolute;
+ top: 40%;
+ left:30%;
+ color: rgba(7, 7, 46,1);
+}
+h1{
+
+ font-size: 5em;
+ font-family: sans-serif;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: white;
+}
