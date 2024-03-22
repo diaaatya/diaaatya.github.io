@@ -1,54 +1,175 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-			<link rel="stylesheet" type="text/css" href="style.css">
-			 <link rel="stylesheet"
-  				href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-</head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<html lang="en">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom styles can be added here */
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white font-semibold text-xl">DIAA ATYA DEVS++</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#about" class="text-white hover:text-gray-300">About</a></li>
+                <li><a href="#skills" class="text-white hover:text-gray-300">Skills</a></li>
+                <li><a href="#projects" class="text-white hover:text-gray-300">Projects</a></li>
+                <li><a href="#contact" class="text-white hover:text-gray-300">Contact</a></li>
+            </ul>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<body>
-<div class="head animated  zoomInUp"> <h1>follow your dream </h1> </div>
-<button type="button" id="diaa" class="btn btn-primary">Primary</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gray-900 text-white py-24 px-8" x-data="{ loaded: false }" x-init="() => { setTimeout(() => { loaded = true }, 500) }">
+        <div class="container mx-auto text-center" x-show="loaded" x-transition:enter="transition-opacity ease-in duration-500" x-transition:leave="transition-opacity ease-out duration-500">
+            <img src="assets/diaa.jpg" alt="Diaa Atya" class="mx-auto rounded-full h-44 w-44 mb-4 opacity-0" x-bind:class="{ 'opacity-100': loaded }">
+            <h2 class="text-4xl font-bold mb-4">Hello, I'm Diaa Atya</h2>
+            <p class="text-lg">A Full Stack Developer & Data Analyst</p>
+        </div>
+    </header>
+    
+    
+    
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gradient-to-br from-purple-500 to-indigo-600">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8 transform -translate-y-16 opacity-0 transition duration-1000 ease-in-out" x-data="{ loaded: false }" x-init="() => { window.addEventListener('scroll', () => { if (window.scrollY > 100 && !loaded) { loaded = true; } }) }" x-bind:class="{ 'opacity-100 translate-y-0': loaded }">
+                <h2 class="text-3xl font-bold mb-8 text-center text-white">About Me</h2>
+                <div class="flex justify-center">
+                    <div class="max-w-md">
+                        <p class="text-lg mb-4 text-gray-800">I'm a versatile full-stack developer with expertise in a wide range of technologies. My proficiency includes developing web applications using React.js, HTML5, JavaScript, and PHP, as well as building mobile apps with React Native and Flutter. Whether it's creating interactive user interfaces or implementing backend functionality, I strive to deliver efficient and scalable solutions.</p>
+                        <p class="text-lg mb-4 text-gray-800">In addition to my development skills, I excel in data analysis using Python, particularly with libraries such as Pandas and NumPy. I leverage my knowledge of data science techniques to derive valuable insights from complex datasets, helping businesses make informed decisions and drive growth. Moreover, I specialize in automation scripting with Python, streamlining processes and increasing productivity.</p>
+                        <p class="text-lg text-gray-800">As a passionate programming tutor, I enjoy sharing my knowledge and empowering others to learn. I have experience mentoring aspiring developers and guiding them through their learning journey. Whether it's teaching the fundamentals of programming or diving into advanced topics, I take pride in fostering a collaborative and supportive learning environment.</p>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8">
+                    <a href="#" class="text-gray-500 hover:text-gray-700 mx-2"><i class="fab  fa-facebook-f fa-2x"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 mx-2"><i class="fa-brands fa-x-twitter fa-2x"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 mx-2"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 mx-2"><i class="fab fa-github fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="bg-gray-100 py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center justify-center" x-data="{ loaded: false }" x-init="() => { setTimeout(() => { loaded = true }, 500) }" x-bind:class="{ 'opacity-100 translate-y-0': loaded, 'opacity-0 translate-y-4': !loaded }" x-transition:enter="transition-opacity ease-in duration-1000 transform ease-out">
+                    <i class="fab fa-html5 text-4xl text-blue-500 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-4">HTML5</h3>
+                </div>
+                <div class="flex flex-col items-center justify-center" x-data="{ loaded: false }" x-init="() => { setTimeout(() => { loaded = true }, 600) }" x-bind:class="{ 'opacity-100 translate-y-0': loaded, 'opacity-0 translate-y-4': !loaded }" x-transition:enter="transition-opacity ease-in duration-1000 transform ease-out">
+                    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-4">CSS3</h3>
+                </div>
+                <div class="flex flex-col items-center justify-center" x-data="{ loaded: false }" x-init="() => { setTimeout(() => { loaded = true }, 700) }" x-bind:class="{ 'opacity-100 translate-y-0': loaded, 'opacity-0 translate-y-4': !loaded }" x-transition:enter="transition-opacity ease-in duration-1000 transform ease-out">
+                    <i class="fab fa-js text-4xl text-yellow-500 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-4">JavaScript</h3>
+                </div>
+                <div class="flex flex-col items-center justify-center" x-data="{ loaded: false }" x-init="() => { setTimeout(() => { loaded = true }, 800) }" x-bind:class="{ 'opacity-100 translate-y-0': loaded, 'opacity-0 translate-y-4': !loaded }" x-transition:enter="transition-opacity ease-in duration-1000 transform ease-out">
+                    <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-4">React.js</h3>
+                </div>
+                <div class="flex flex-col items-center justify-center" x-data="{ loaded: false }" x-init="() => { setTimeout(() => { loaded = true }, 800) }" x-bind:class="{ 'opacity-100 translate-y-0': loaded, 'opacity-0 translate-y-4': !loaded }" x-transition:enter="transition-opacity ease-in duration-1000 transform ease-out">
+                    <i class="fab fa-python text-4xl text-blue-400 mb-2"></i>
+                    <h3 class="text-lg font-semibold mb-4">Python</h3>
+                </div>
+                <!-- PHP -->
+                <div class="flex flex-col items-center justify-center" x-data="{ loaded: false }" x-init="() => { setTimeout(() => { loaded = true }, 1000) }" x-bind:class="{ 'opacity-100 translate-y-0': loaded, 'opacity-0 translate-y-4': !loaded }" x-transition:enter="transition-opacity ease-in duration-1000 transform ease-out">
+                    <div class="w-20 h-20  flex items-center justify-center mb-2">
+                        <i class="fab fa-php text-4xl text-blue-400 mb-2"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">PHP</h3>
+                </div>
+                <!-- Laravel -->
+                <div class="flex flex-col items-center justify-center" x-data="{ loaded: false }" x-init="() => { setTimeout(() => { loaded = true }, 1100) }" x-bind:class="{ 'opacity-100 translate-y-0': loaded, 'opacity-0 translate-y-4': !loaded }" x-transition:enter="transition-opacity ease-in duration-1000 transform ease-out">
+                    <div class="w-20 h-20  flex items-center justify-center mb-2">
+                        <i class="fab fa-laravel text-3xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">Laravel</h3>
+                </div>
+                
+                <!-- Add more skills with icons -->
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <img src="assets/project.jfif" alt="Project 1" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Project 1</h3>
+                        <p class="text-lg mb-4">Description of Project 1.</p>
+                        <a href="#" class="block w-full text-center py-2 rounded-md text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600">View Project</a>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <img src="assets/project.jfif" alt="Project 2" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Project 2</h3>
+                        <p class="text-lg mb-4">Description of Project 2.</p>
+                        <a href="#" class="block w-full text-center py-2 rounded-md text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600">View Project</a>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <img src="assets/project.jfif" alt="Project 3" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Project 3</h3>
+                        <p class="text-lg mb-4">Description of Project 3.</p>
+                        <a href="#" class="block w-full text-center py-2 rounded-md text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600">View Project</a>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Contact Me</h2>
+            <div class="flex justify-center">
+                <div class="max-w-md">
+                    <p class="text-lg mb-4">Feel free to reach out to me for any inquiries or collaboration opportunities.</p>
+                    <p class="text-lg">Email: example@example.com</p>
+                    <p class="text-lg">Phone: +123 456 7890</p>
+                    <div class="mt-8">
+                        <a href="#" class="text-blue-500 hover:underline">LinkedIn</a>
+                        <span class="mx-4">•</span>
+                        <a href="#" class="text-blue-500 hover:underline">GitHub</a>
+                        <!-- Add more social media links as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
-			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>
